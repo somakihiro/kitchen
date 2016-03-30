@@ -2,13 +2,31 @@
 <html>
 <head>
   <title>Kitchen</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<header>
+    <div class="header-title">
+        <%= link_to "Kitchen", '#' %>
+    </div>
+    <div class="header-right">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                    ユーザー名 <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li role="presentation"><%= link_to "マイページ", '#' %></li>
+                    <li role="presentation"><%= link_to "プロフィール編集", '#' %></li>
+                    <li role="presentation"><%= link_to "ログアウト", '#' %></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+    <%= yield %>
 </body>
 </html>

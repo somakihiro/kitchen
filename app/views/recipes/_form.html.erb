@@ -1,0 +1,15 @@
+<%= form_for(@recipe) do |f| %>
+    <div class="field">
+        <%= f.text_field :title, placeholder: "料理名をつけましょう" %>
+    </div>
+    <div class="field">
+        <%= f.text_area :description, placeholder: "料理の魅力を伝えましょう！" %>
+    </div>
+    <div class="field">
+        <%= f.fields_for :recipe_materials do |material| %>
+            <%= render 'recipes/recipe_material_fields', f: material %>
+        <% end %>
+        <%= link_to_add_association '追加', f, :recipe_materials %>
+    </div>
+    <%= f.submit '保存' %>
+<% end %>
