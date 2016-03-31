@@ -1,15 +1,27 @@
 <%= form_for(@recipe) do |f| %>
     <div class="field">
-        <%= f.text_field :title, placeholder: "料理名をつけましょう" %>
+        <%= f.text_field :title, placeholder: "料理名をつけよう！" %>
     </div>
     <div class="field">
-        <%= f.text_area :description, placeholder: "料理の魅力を伝えましょう！" %>
+        <%= f.text_area :description, placeholder: "料理の魅力を伝えよう！" %>
     </div>
     <div class="field">
         <%= f.fields_for :recipe_materials do |material| %>
             <%= render 'recipes/recipe_material_fields', f: material %>
         <% end %>
-        <%= link_to_add_association '追加', f, :recipe_materials %>
+        <%= link_to_add_association '材料を追加', f, :recipe_materials %>
+    </div>
+    <div class="field">
+        <%= f.fields_for :recipe_steps do |step| %>
+            <%= render 'recipes/recipe_step_fields', f: step %>
+        <% end %>
+        <%= link_to_add_association 'レシピ追加', f, :recipe_steps %>
+    </div>
+    <div class="field">
+        <%= f.fields_for :recipe_points do |point| %>
+            <%= render 'recipes/recipe_point_fields', f: point %>
+        <% end %>
+        <%= link_to_add_association 'ポイント追加', f, :recipe_points %>
     </div>
     <%= f.submit '保存' %>
 <% end %>
