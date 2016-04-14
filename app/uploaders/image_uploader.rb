@@ -36,6 +36,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   def filename
     super.chomp(File.extname(super)) + '.jpg' if original_filename.present?
   end
+
   
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

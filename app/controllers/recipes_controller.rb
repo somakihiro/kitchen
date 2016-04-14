@@ -24,6 +24,6 @@ class RecipesController < ApplicationController
     end
     
     def recipe_params
-        params.require(:recipe).permit(:title, :description, :image, recipe_materials_attributes: [:id, :material, :quantity, :_destroy], recipe_steps_attributes: [:id, :step, :_destroy], recipe_points_attributes: [:id, :point, :_destroy])
+        params.require(:recipe).permit(:title, :description, :image, :image_cache, recipe_materials_attributes: [:id, :material, :quantity, :_destroy], recipe_steps_attributes: [:id, :step, :_destroy], recipe_points_attributes: [:id, :point, :_destroy])
     end
 end
