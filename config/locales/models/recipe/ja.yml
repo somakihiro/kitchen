@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      recipe: レシピ
+    attributes:
+      recipe:
+        image: 画像
+        title: レシピタイトル
+        description: レシピの魅力

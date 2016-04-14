@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      recipe_points: ポイント
+    attributes:
+      recipe_point:
+        point: ポイント
+      recipe_steps:
+        point: ポイント

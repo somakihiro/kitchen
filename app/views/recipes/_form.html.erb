@@ -1,8 +1,16 @@
 <%= form_for(@recipe) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
     <div class="field">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+    </div>
+    <div class="field">
+        <%= f.label :title %>
         <%= f.text_field :title, placeholder: "料理名をつけよう！" %>
     </div>
     <div class="field">
+        <%= f.label :description %>
         <%= f.text_area :description, placeholder: "料理の魅力を伝えよう！" %>
     </div>
     <div class="field">

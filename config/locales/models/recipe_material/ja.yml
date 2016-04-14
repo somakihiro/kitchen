@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      recipe_materials: 材料
+    attributes:
+      recipe_material:
+        material: 材料
+        quantity: 数量
+      recipe_materials:
+        material: 材料
+        quantity: 数量

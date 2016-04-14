@@ -1,0 +1,13 @@
+<%= image_tag @recipe.image.url %>
+<%= @recipe.title %>
+<%= @recipe.description %>
+<% @recipe.recipe_materials.each do |material| %>
+    <%= material.material %>
+    <%= material.quantity %>
+<% end %>
+<% @recipe.recipe_steps.each do |step| %>
+    <%= step.step %>
+<% end %>
+<% @recipe.recipe_points.each do |point| %>
+    <%= point.point %>
+<% end %>

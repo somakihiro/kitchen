@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      recipe_steps: レシピ
+    attributes:
+      recipe_material:
+        step: レシピ
+      recipe_steps:
+        step: レシピ
