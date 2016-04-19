@@ -1,13 +1,46 @@
-<%= image_tag @recipe.image.url %>
-<%= @recipe.title %>
-<%= @recipe.description %>
-<% @recipe.recipe_materials.each do |material| %>
-    <%= material.material %>
-    <%= material.quantity %>
-<% end %>
-<% @recipe.recipe_steps.each do |step| %>
-    <%= step.step %>
-<% end %>
-<% @recipe.recipe_points.each do |point| %>
-    <%= point.point %>
-<% end %>
+<div class="recipe-top row">
+    <%= image_tag @recipe.image.url, class: "recipe-image" %>
+    <div class="recipe-top-bottom">
+        <div class="recipe-title">
+            <%= @recipe.title %>
+        </div>
+        <div class="recipe-description">
+            <%= @recipe.description %>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="recipe-element col-md-6">
+        <div class="recipe-subtitle">
+            材料
+        </div>
+        <% @recipe.recipe_materials.each do |material| %>
+            <div class="recipe-material-id">
+                <span><%= material.material %></span>
+                <span class="quantity"><%= material.quantity %></span>
+            </div>
+        <% end %>
+    </div>
+    <div class="recipe-element col-md-6">
+        <div class="recipe-subtitle">
+            ポイント
+        </div>
+        <ul>
+            <% @recipe.recipe_points.each do |point| %>
+                <li><%= point.point %></li>
+            <% end %>
+        </ul>
+    </div>
+</div>
+<div class=" recipe-element row col-md-12">
+    <div class="recipe-subtitle">
+        レシピ
+    </div>
+    <ol>
+        <% @recipe.recipe_steps.each do |step| %>
+            <div class="recipe-step-id col-md-6">
+                <li><%= step.step %></li>
+            </div>
+        <% end %>
+    </ol>
+</div>

@@ -1,5 +1,7 @@
 class Recipe < ActiveRecord::Base
-    validates :image, :title, :description, presence: true
+    validates :image, presence: true
+    validates :title, presence: true, length: { maximum: 30 }
+    validates :description, presence: true, length: { maximum: 60 }
     
     has_many :recipe_materials
     has_many :recipe_steps

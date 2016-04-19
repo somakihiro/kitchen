@@ -7,3 +7,7 @@ ja:
         image: 画像
         title: レシピタイトル
         description: レシピの魅力
+        material: 材料
+        quantity: 数量
+        step: レシピ
+        point: ポイント

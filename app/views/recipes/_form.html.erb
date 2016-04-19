@@ -1,36 +1,42 @@
 <%= form_for(@recipe) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    
     <div class="field">
         <%= image_tag @recipe.image.thumb.url if @recipe.image? %>
         <%= f.file_field :image %>
         <%= f.hidden_field :image_cache %>
     </div>
     <div class="field">
-        <%= f.label :title %>
-        <%= f.text_field :title, placeholder: "料理名をつけよう！" %>
+        <%= f.text_field :title, class: "form-control", placeholder: "料理名をつけよう！(30文字以内)" %>
     </div>
     <div class="field">
-        <%= f.label :description %>
-        <%= f.text_area :description, placeholder: "料理の魅力を伝えよう！" %>
+        <%= f.text_area :description, class: "form-control", placeholder: "料理の魅力を伝えよう！(60文字以内)" %>
     </div>
     <div class="field">
+        <%= f.label :material %>
+        <%= f.label :quantity %>
         <%= f.fields_for :recipe_materials do |material| %>
             <%= render 'recipes/recipe_material_fields', f: material %>
         <% end %>
-        <%= link_to_add_association '材料を追加', f, :recipe_materials %>
+        <div class="field">
+            <%= link_to_add_association '材料を追加', f, :recipe_materials %>
+        </div>
     </div>
     <div class="field">
+        <%= f.label :step %>
         <%= f.fields_for :recipe_steps do |step| %>
             <%= render 'recipes/recipe_step_fields', f: step %>
         <% end %>
-        <%= link_to_add_association 'レシピ追加', f, :recipe_steps %>
+        <div class="field">
+            <%= link_to_add_association 'レシピ追加', f, :recipe_steps %>
+        </div>
     </div>
     <div class="field">
         <%= f.fields_for :recipe_points do |point| %>
             <%= render 'recipes/recipe_point_fields', f: point %>
         <% end %>
-        <%= link_to_add_association 'ポイント追加', f, :recipe_points %>
+        <div class="field">
+            <%= link_to_add_association 'ポイント追加', f, :recipe_points %>
+        </div>
     </div>
-    <%= f.submit '保存' %>
+    <%= f.submit "投稿する", class: "btn btn-large btn-primary" %>
 <% end %>

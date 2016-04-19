@@ -16,8 +16,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  #画像の上限を700pxにする
-  process :resize_to_fit => [400,400]
+  process :resize_to_fit => [350,350]
   
   #保存形式をJPGにする
   process :convert => 'jpg'

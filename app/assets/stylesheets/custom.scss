@@ -13,6 +13,7 @@ header {
     top: 0px;
     left: 0px;
     background-color: #fff;
+    z-index: 100;
 }
 
 a {
@@ -61,4 +62,85 @@ a:hover {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+#recipe_image {
+    margin-bottom: 20px;
+}
+#recipe_title {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+#recipe_description {
+    width: 35%;
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.material-form {
+    width: 15%;
+    float: left;
+    margin-right: 10px;
+}
+
+.quantity-form {
+    width: 15%;
+}
+
+.step-form {
+    width: 30%;
+    height: 70px;
+}
+
+.point-form {
+    width: 40%;
+}
+
+.recipe-top {
+    text-align: center;
+}
+.recipe-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+.recipe-top-bottom {
+    padding-top: 20px;
+}
+
+.recipe-title {
+    font-size: 35px;
+}
+
+.recipe-description {
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.recipe-element {
+    font-size: 18px;
+}
+
+.recipe-subtitle {
+    font-size: 20px;
+    border-bottom: 1px solid #DCE0E0;
+    margin-bottom: 3px;
+    padding-top: 50px;
+}
+.recipe-material-id {
+    padding-bottom: 3px;
+}
+
+.quantity {
+    float: right;
+}
+
+.recipe-point > li {
+    padding-bottom: 3px;
+}
+
+.recipe-step-id {
+    padding-bottom: 30px;
 }
