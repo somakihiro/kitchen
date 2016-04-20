@@ -1,10 +1,10 @@
 class RecipesController < ApplicationController
-    
+    before_action :set_recipe, only: [:show, :edit, :update]
+
     def index
     end
     
     def show
-        @recipe = Recipe.find(params[:id])
     end
     
     def new
@@ -23,7 +23,22 @@ class RecipesController < ApplicationController
         end
     end
     
+    def edit
+    end
+     
+    def update
+        if @recipe.update(recipe_params)
+            redirect_to recipe_path, notice: "レシピを変更しました。"
+        else
+            render 'edit'
+        end
+    end
+    
     def recipe_params
         params.require(:recipe).permit(:title, :description, :image, :image_cache, recipe_materials_attributes: [:id, :material, :quantity, :_destroy], recipe_steps_attributes: [:id, :step, :_destroy], recipe_points_attributes: [:id, :point, :_destroy])
+    end
+    
+    def set_recipe
+        @recipe = Recipe.find(params[:id])
     end
 end
