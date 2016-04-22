@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
     before_action :set_recipe, only: [:show, :edit, :update]
-
+    before_action :logged_in_user, only: [:new, :create, :edit, :update]
     def index
     end
     
@@ -15,9 +15,10 @@ class RecipesController < ApplicationController
     end
     
     def create
-        @recipe = Recipe.new(recipe_params)
+        @recipe = current_user.recipes.build(recipe_params)
         if @recipe.save
-            redirect_to @recipe, notice: "投稿に成功しました"
+            flash[:success] = "投稿に成功しました"
+            redirect_to @recipe
         else
             render 'new'
         end

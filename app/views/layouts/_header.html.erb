@@ -1,0 +1,25 @@
+<header>
+    <div class="header-title">
+        <%= link_to "Kitchen", root_path %>
+    </div>
+    <div class="header-right">
+        <% if logged_in? %>
+            <ul class="nav nav-pills">
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                        <%= current_user.name %><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation"><%= link_to "マイページ", current_user %></li>
+                        <li role="presentation"><%= link_to "プロフィール編集", edit_user_path(current_user) %></li>
+                        <li role="presentation"><%= link_to "ログアウト", logout_path, method: "delete" %></li>
+                    </ul>
+                </li>
+            </ul>
+        <% else %>
+            <div class="login-link">
+                <%= link_to "ログイン", login_path %>
+            </div>
+        <% end %>
+    </div>
+</header>
