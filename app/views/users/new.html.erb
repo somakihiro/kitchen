@@ -1,0 +1,18 @@
+<h2 class="new-user-title">Kitchenを始めよう</h2>
+<%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+        <%= f.text_field :name, class: "form-control", placeholder: "ユーザー名" %>
+    </div>
+    <div class="field">
+        <%= f.email_field :email, class: "form-control", placeholder: "メールアドレス" %>
+    </div>
+    <div class="field">
+        <%= f.password_field :password, class: "form-control", placeholder: "パスワード" %>
+    </div>
+    <div class="field">
+        <%= f.submit "アカウント作成", class: "btn btn-large btn-primary new-user-btn" %>
+    </div>
+    <span>アカウントをお持ちですか？</span>
+    <%= link_to "ログイン", login_path, { class: "signup-link" } %>
+<% end %>

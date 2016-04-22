@@ -1,0 +1,16 @@
+<h2 class="session-user-title">Kitchenにログイン</h2>
+<div class="session-user">
+    <%= form_for(:session, url: login_path) do |f| %>
+        <div class="field">
+            <%= f.email_field :email, class: "form-control", placeholder: "メールアドレス" %>
+        </div>
+        <div class="field">
+            <%= f.password_field :password, class: "form-control", placeholder: "パスワード" %>
+        </div>
+        <div class="field">
+            <%= f.submit "ログイン", class: "btn btn-large btn-primary session-user-btn" %>
+        </div>
+    <% end %>
+    <span>アカウントはお持ちですか？</span>
+    <%= link_to "アカウント作成", signup_path, { class: "signup-link" } %>
+</div>

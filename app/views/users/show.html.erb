@@ -1,0 +1,24 @@
+<div class="user-profile">
+    <div class="profile-left col-md-4">
+        <% if @user.image? %>
+            <%= image_tag @user.image.url, class: "user-image" %>
+        <% else %>
+            <%= image_tag "default_image.jpg", class: "user-image" %>
+        <% end %>
+    </div>
+    <div class="profile-right col-md-6">
+        <div class="profile-right-top">
+            <span class="profile-name">
+                <%= @user.name %>
+            </span>
+            <% if @user == current_user %>
+                <%= link_to "プロフィール編集", edit_user_path, class: "btn btn-large btn-primary edit-profile-btn" %>
+            <% end %>
+        </div>
+        <div class="profile-introduction">
+            <% if @user.introduction.present? %>
+                <%= @user.introduction %>
+            <% end %>
+        </div>
+    </div>
+</div>

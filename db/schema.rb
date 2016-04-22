@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420031716) do
+ActiveRecord::Schema.define(version: 20160421094424) do
 
   create_table "recipe_materials", force: :cascade do |t|
     t.string   "material"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20160420031716) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.text     "introduction"
+    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

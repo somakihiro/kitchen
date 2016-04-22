@@ -37,6 +37,9 @@ a:hover {
     float: right;
     padding: 20px 70px;
 }
+.login-link {
+    padding: 11px;
+}
 
 .sb-site {
     padding-top: 55px;
@@ -143,4 +146,69 @@ a:hover {
 
 .recipe-step-id {
     padding-bottom: 30px;
+}
+
+.new-user-title, .session-user-title {
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 60px;
+}
+
+.new_user, .session-user {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#user_name, #user_email, #user_password, #user_image, #session_email, #session_password {
+    margin-bottom: 25px;
+}
+
+.new-user-btn, .session-user-btn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.edit_user {
+    width: 40%;
+}
+
+.edit-user-btn {
+    margin-top: 20px;
+    width: 25%;
+}
+
+.user-image {
+    width: 152px;
+    height: 152px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-profile {
+    padding-top: 40px;
+}
+
+.profile-left {
+    padding-right: 0;
+    margin-left: 50px;
+}
+
+.profile-name {
+    font-size: 30px;
+    padding-right: 15px;
+}
+
+.edit-profile-btn {
+    margin-bottom: 15px;
+}
+
+.profile-introduction {
+    font-size: 16px;
+}
+
+.signup-link {
+    color: #337ab7;
 }
