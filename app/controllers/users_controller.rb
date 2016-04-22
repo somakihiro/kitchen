@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    @recipes = @user.recipes.order(created_at: :desc)
   end
   
   def edit
