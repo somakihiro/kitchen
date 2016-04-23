@@ -221,9 +221,18 @@ a:hover {
     margin-bottom: 30px;
 }
 
+.recipe-thumb-frame {
+    background-color: #3F3F3F;
+}
+
 .recipe-thumb {
     width: 350px;
     height: 300px;
+}
+
+.recipe-thumb:hover {
+    opacity: 0.5;
+    color: black;
 }
 
 .signup-link {
