@@ -1,5 +1,6 @@
 <div class="user-recipe-image col-md-4">
     <div class="recipe-thumb-frame">
-        <%= link_to image_tag(recipe.image, { class: "recipe-thumb"}), recipe %>
+        <%= link_to recipe.title, recipe, class: "users-recipe-title" %>
+        <%= image_tag(recipe.image, { class: "recipe-thumb"}) %>
     </div>
 </div>

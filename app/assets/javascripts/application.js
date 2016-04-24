@@ -15,3 +15,13 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //= require cocoon
+$(function() {
+    $('.recipe-thumb-frame').hover(
+        function() {
+            $(this).find('.users-recipe-title').show();
+        },
+        function() {
+            $(this).find('.users-recipe-title').hide();
+        }
+    );
+});

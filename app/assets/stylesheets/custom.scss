@@ -225,14 +225,25 @@ a:hover {
     background-color: #3F3F3F;
 }
 
+.users-recipe-title {
+    width: 92.3%;
+    height: 100%;
+    position: absolute;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    padding: 150px 50px;
+    display: none;
+}
+
+.users-recipe-title:hover {
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+}
+
 .recipe-thumb {
     width: 350px;
     height: 300px;
-}
-
-.recipe-thumb:hover {
-    opacity: 0.5;
-    color: black;
 }
 
 .signup-link {
