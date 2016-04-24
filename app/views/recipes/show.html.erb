@@ -1,3 +1,7 @@
+<% if current_user == @recipe.user %>
+<%= link_to "レシピ編集", edit_recipe_path, class: "btn btn-large btn-primary" %>
+<%= link_to "レシピ削除", recipe_path, class: "btn btn-large btn-primary", method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
+<% end %>
 <div class="recipe-top row">
     <%= image_tag @recipe.image.url, class: "recipe-image" %>
     <div class="recipe-top-bottom">
