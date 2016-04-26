@@ -1,0 +1,13 @@
+<div class="row">
+    <h2 class="recipes-list col-md-12">レシピ一覧</h2>
+    <% @recipe.each do |recipes| %>
+        <div class="top-recipes col-md-3">
+            <div class="top-recipes-image">
+                <%= link_to image_tag(recipes.image.url, { class: "top-recipe-thumb" }), recipes %>
+            </div>
+            <div class="top-recipes-title">
+                <%= link_to recipes.title, recipes, class: "top-recipes-title-link" %>
+            </div>
+        </div>
+    <% end %>
+</div>

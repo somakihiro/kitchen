@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
     before_action :set_recipe, only: [:show, :edit, :update, :destroy]
     before_action :logged_in_user, only: [:new, :create, :edit, :update]
     def index
+        @recipe = Recipe.all.order(created_at: :desc)
     end
     
     def show
