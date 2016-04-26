@@ -107,6 +107,16 @@ a:hover {
 .recipe-top {
     text-align: center;
 }
+
+.chef-name {
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+.chef-name-link:hover {
+    text-decoration: underline;
+}
+
 .recipe-image {
     width: 350px;
     height: 350px;
@@ -203,6 +213,11 @@ a:hover {
 .profile-name {
     font-size: 30px;
     padding-right: 15px;
+    float: left;
+}
+
+.profile-edit, #follow_form {
+    padding: 5px;
 }
 
 .edit-profile-btn {

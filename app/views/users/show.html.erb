@@ -12,8 +12,11 @@
                 <%= @user.name %>
             </span>
             <% if @user == current_user %>
-                <%= link_to "プロフィール編集", edit_user_path, class: "btn btn-large btn-primary edit-profile-btn" %>
+                <div class="profile-edit">
+                    <%= link_to "プロフィール編集", edit_user_path, class: "btn btn-large btn-primary edit-profile-btn" %>
+                </div>
             <% end %>
+            <%= render 'follow_form' if logged_in? %>
         </div>
         <div class="profile-introduction">
             <% if @user.introduction.present? %>
