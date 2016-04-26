@@ -1,0 +1,19 @@
+<h2>フォロー中</h2>
+<div class="row following-list">
+    <% if @following_users.any? %>
+        <% @following_users.each do |following| %>
+            <div class="col-md-3 following-frame">
+                <div class="following-thumb">
+                    <% if following.image? %>
+                        <%= link_to image_tag(following.image.url, { class: "following-image" }), following %>
+                    <% else %>
+                        <%= link_to image_tag("default_image.jpg", { class: "following-image" }), following %>
+                    <% end %>
+                </div>
+                <div class="following-name">
+                    <%= link_to following.name, following %>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+</div>

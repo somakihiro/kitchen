@@ -1,0 +1,19 @@
+<h2>フォロワー</h2>
+<div class="row follower-list">
+    <% if @follower_users.any? %>
+        <% @follower_users.each do |follower| %>
+            <div class="col-md-3 follower-frame">
+                <div class="follower-thumb">
+                    <% if follower.image? %>
+                        <%= link_to image_tag(follower.image.url, { class: "follower-image" }), follower %>
+                    <% else %>
+                        <%= link_to image_tag("default_image.jpg", { class: "follower-image" }), follower %>
+                    <% end %>
+                </div>
+                <div class="follower-name">
+                    <%= link_to follower.name, follower %>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+</div>

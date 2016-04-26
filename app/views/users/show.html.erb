@@ -23,6 +23,11 @@
                 <%= @user.introduction %>
             <% end %>
         </div>
+        <div class="users-data">
+            <span>レシピ投稿<%= @user.recipes.count %>件</span>
+            <%= link_to "フォロワー" + @user.follower_relationships.count.to_s + "人", followers_user_path, class: "users-follow-data" %>
+            <%= link_to @user.following_relationships.count.to_s + "人をフォロー中", followings_user_path, class: "users-follow-data" %>
+        </div>
     </div>
 </div>
 <div class="user-recipes col-md-12">

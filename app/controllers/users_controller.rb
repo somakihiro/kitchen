@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :followers, :followings]
   before_action :authenticate, only: [:edit, :update]
   
   def index
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   
   def show
     @recipes = @user.recipes.order(created_at: :desc)
+    @user_followers = "フォロワー" + @user.follower_relationships.count.to_s + "人"
   end
   
   def edit
@@ -32,6 +33,14 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def followers
+    @follower_users = @user.follower_users
+  end
+  
+  def followings
+    @following_users = @user.following_users
   end
   
   def user_params

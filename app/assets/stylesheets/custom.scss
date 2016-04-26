@@ -226,6 +226,16 @@ a:hover {
 
 .profile-introduction {
     font-size: 16px;
+    clear: both;
+}
+
+.users-data {
+    font-size: 16px;
+    padding-top: 17px;
+}
+
+.users-follow-data {
+    padding-left: 40px;
 }
 
 .user-recipes {
@@ -280,4 +290,28 @@ a:hover {
 
 .top-recipes-title-link:hover {
     text-decoration: underline;
+}
+
+.follower-list, .following-list {
+    font-size: 16px;
+    padding-top: 50px;
+}
+
+.follower-frame, .following-frame {
+    padding-bottom: 30px;
+}
+
+.follower-thumb, .following-thumb {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.follower-image, .following-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.follower-name, .following-name {
+    text-align: center;
 }
