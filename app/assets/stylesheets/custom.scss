@@ -315,3 +315,48 @@ a:hover {
 .follower-name, .following-name {
     text-align: center;
 }
+
+.items-frame {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+.items-user {
+    text-align: left;
+    border: 1px solid #EDEEEE;
+    background-color: #fff;
+    padding: 15px;
+}
+
+.items-user-main {
+    float: left;
+}
+
+.items-user-image {
+    border-radius: 50%;
+    width: 25px;
+    margin-right: 5px;
+}
+
+.items-timestamp {
+    text-align: right;
+}
+
+.items-image {
+    border-left: 1px solid #EDEEEE;
+    border-right: 1px solid #EDEEEE;
+}
+
+.items-thumb {
+    width: 100%;
+    height: 460px;
+}
+
+.feed-items {
+    border: 1px solid #EDEEEE;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 50px;
+}

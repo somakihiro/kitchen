@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       get 'followings'
       get 'followers'
+      get 'timeline'
     end
   end
   resources :sessions, only: [:new, :create, :destroy]

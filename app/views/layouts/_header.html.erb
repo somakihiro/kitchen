@@ -12,6 +12,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li role="presentation"><%= link_to "マイページ", current_user %></li>
                         <li role="presentation"><%= link_to "プロフィール編集", edit_user_path(current_user) %></li>
+                        <li role="presentation"><%= link_to "タイムライン", timeline_user_path %></li>
                         <li role="presentation"><%= link_to "ログアウト", logout_path, method: "delete" %></li>
                     </ul>
                 </li>

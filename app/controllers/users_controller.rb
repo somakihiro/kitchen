@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :followers, :followings]
+  before_action :set_user, only: [:show, :edit, :update, :followers, :followings, :timeline]
   before_action :authenticate, only: [:edit, :update]
   
   def index
@@ -41,6 +41,12 @@ class UsersController < ApplicationController
   
   def followings
     @following_users = @user.following_users
+  end
+  
+  def timeline
+    if logged_in?
+      @feed_items = current_user.feed_items.includes(:user).order(created_at: :desc)
+    end
   end
   
   def user_params

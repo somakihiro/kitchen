@@ -1,0 +1,27 @@
+<% if logged_in? %>
+    <% if @feed_items.any? %>
+        <% @feed_items.each do |items| %>
+            <div class="items-frame">
+                <div class="items-user">
+                    <div class="items-user-main">
+                        <% if items.user.image? %>
+                            <%= link_to image_tag(items.user.image.url, { class: "items-user-image" }), items.user %>
+                        <% else %>
+                            <%= link_to image_tag("default_image.jpg", { class: "items-user-image" }), items.user %>
+                        <% end %>
+                        <%= link_to items.user.name, items.user %>
+                    </div>
+                    <div class="items-timestamp">
+                        <%= time_ago_in_words(items.created_at) %>前
+                    </div>
+                </div>
+                <div class="items-image">
+                    <%= link_to image_tag(items.image.url, { class: "items-thumb" }), items %>
+                </div>
+                <div class="feed-items">
+                    <%= link_to items.title, items %>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+<% end %>
