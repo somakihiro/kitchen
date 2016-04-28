@@ -24,4 +24,13 @@ $(function() {
             $(this).find('.users-recipe-title').hide();
         }
     );
+    
+    $('.like-recipe-thumb-frame').hover(
+        function() {
+            $(this).find('.like-recipe-title').show();
+        },
+        function() {
+            $(this).find('.like-recipe-title').hide();
+        }
+    );
 });

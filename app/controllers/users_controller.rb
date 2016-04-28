@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :followers, :followings, :timeline]
+  before_action :set_user, only: [:show, :edit, :update, :followers, :followings, :timeline, :like]
   before_action :authenticate, only: [:edit, :update]
   before_action :logged_in_user, only: [:timeline]
   
@@ -47,6 +47,10 @@ class UsersController < ApplicationController
     if logged_in?
       @feed_items = current_user.feed_items.includes(:user).order(created_at: :desc)
     end
+  end
+  
+  def like
+    @like_recipes = current_user.like_recipes.order(created_at: :desc)
   end
   
   def user_params

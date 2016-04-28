@@ -243,23 +243,27 @@ a:hover {
     padding-top: 17px;
 }
 
-.users-follow-data {
-    padding-left: 40px;
+.users-follow-data, .users-like-data {
+    padding-left: 35px;
 }
 
 .user-recipes {
     padding-top: 70px;
 }
 
-.user-recipe-image {
+.like-recipes {
+    padding-bottom: 45px;
+}
+
+.user-recipe-image, .like-recipe-image {
     margin-bottom: 30px;
 }
 
-.recipe-thumb-frame {
+.recipe-thumb-frame, .like-recipe-thumb-frame {
     background-color: #3F3F3F;
 }
 
-.users-recipe-title {
+.users-recipe-title, .like-recipe-title {
     width: 92.3%;
     height: 100%;
     position: absolute;
@@ -275,8 +279,13 @@ a:hover {
     color: #fff;
 }
 
-.recipe-thumb {
-    width: 350px;
+.like-recipe-title:hover {
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+.recipe-thumb, .like-recipe-thumb {
+    width: 100%;
     height: 300px;
 }
 
