@@ -1,13 +1,20 @@
 <div class="row">
+    <%= search_form_for(@q, method: :get) do |f| %>
+        <%= f.search_field :title_or_recipe_materials_material_cont, class: "recipes-search form-control", placeholder: "レシピ名, 材料名" %>
+    <% end %>
     <h2 class="recipes-list col-md-12">レシピ一覧</h2>
-    <% @recipe.each do |recipes| %>
-        <div class="top-recipes col-md-3">
-            <div class="top-recipes-image">
-                <%= link_to image_tag(recipes.image.url, { class: "top-recipe-thumb" }), recipes %>
-            </div>
-            <div class="top-recipes-title">
-                <%= link_to recipes.title, recipes, class: "top-recipes-title-link" %>
-            </div>
+    <% @recipe.each_slice(4) do |recipes| %>
+        <div class="row top-recipes-frame">
+            <% recipes.each do |recipe| %>
+                <div class="top-recipes col-md-3">
+                    <div class="top-recipes-image">
+                        <%= link_to image_tag(recipe.image.url, { class: "top-recipe-thumb" }), recipe %>
+                    </div>
+                    <div class="top-recipes-title">
+                        <%= link_to recipe.title, recipe, class: "top-recipes-title-link" %>
+                    </div>
+                </div>
+            <% end %>
         </div>
     <% end %>
 </div>

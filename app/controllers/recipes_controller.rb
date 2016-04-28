@@ -3,6 +3,8 @@ class RecipesController < ApplicationController
     before_action :logged_in_user, only: [:new, :create, :edit, :update]
     def index
         @recipe = Recipe.all.order(created_at: :desc)
+        @q = Recipe.ransack(params[:q])
+        @recipe = @q.result.includes([:recipe_materials]).uniq
     end
     
     def show

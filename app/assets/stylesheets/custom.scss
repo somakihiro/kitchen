@@ -284,6 +284,13 @@ a:hover {
     color: #337ab7;
 }
 
+.recipes-search {
+    width: 40%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .recipes-list {
     padding-bottom: 20px;
 }
@@ -293,8 +300,18 @@ a:hover {
 }
 
 .top-recipe-thumb {
-    width: 250px;
-    height: 200px;
+    width: 270px;
+    height: 250px;
+    border-left: 1px solid #EDEEEE;
+    border-right: 1px solid #EDEEEE;
+}
+
+.top-recipes-title {
+    border: 1px solid #EDEEEE;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 270px;
 }
 
 .top-recipes-title-link:hover {
