@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   end
   
   def like
-    @like_recipes = current_user.like_recipes.order(created_at: :desc)
+    @like_recipes = @user.like_recipes.order(created_at: :desc)
   end
   
   def user_params

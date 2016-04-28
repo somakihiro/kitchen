@@ -1,4 +1,4 @@
-<h2 class="like-recipes col-md-12"><%= current_user.name %>さんのお気に入りレシピ</h2>
+<h2 class="like-recipes col-md-12"><%= @user.name %>さんのお気に入りレシピ</h2>
 <% @like_recipes.each do |recipe| %>
     <div class="like-recipe-image col-md-4">
         <div class="like-recipe-thumb-frame">
