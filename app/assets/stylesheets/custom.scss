@@ -17,6 +17,29 @@ header {
     z-index: 100;
 }
 
+.footer {
+    height: 150px;
+    border-top: 1px solid #EDEEEE;
+    background-color: #fff;
+}
+
+.footer-frame {
+    padding-top: 15px;
+}
+
+.footer-title {
+    font-size: 1.75em;
+    float: left;
+}
+
+.developer-data {
+    float: right;
+}
+
+.developer-twitter, .developer-facebook {
+    padding-top: 8px;
+}
+
 a {
     color: #3a424e;
     text-decoration: none;

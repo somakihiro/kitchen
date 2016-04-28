@@ -2,7 +2,7 @@
     <%= search_form_for(@q, method: :get) do |f| %>
         <%= f.search_field :title_or_recipe_materials_material_cont, class: "recipes-search form-control", placeholder: "レシピ名, 材料名" %>
     <% end %>
-    <h2 class="recipes-list col-md-12">レシピ一覧</h2>
+    <h3 class="recipes-list col-md-12">レシピ一覧</h3>
     <% @recipe.each_slice(4) do |recipes| %>
         <div class="row top-recipes-frame">
             <% recipes.each do |recipe| %>
