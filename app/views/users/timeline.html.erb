@@ -19,7 +19,16 @@
                     <%= link_to image_tag(items.image.url, { class: "items-thumb" }), items %>
                 </div>
                 <div class="feed-items">
-                    <%= link_to items.title, items %>
+                    <%= link_to items.title, items, class: "items-title" %>
+                    <% if logged_in? %>
+                        <div class="like-btn">
+                            <% if current_user.like?(items) %>
+                                <%= link_to "いいね解除", like_path(items), method: :delete, class: "btn btn btn-primary" %>
+                            <% else %>
+                                <%= link_to "いいね！", likes_path(recipe_id: items.id), method: :post, class: "btn btn-warning" %>
+                            <% end %>
+                        </div>
+                    <% end %>
                 </div>
             </div>
         <% end %>

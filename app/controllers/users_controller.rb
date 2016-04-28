@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :followers, :followings, :timeline]
   before_action :authenticate, only: [:edit, :update]
+  before_action :logged_in_user, only: [:timeline]
   
   def index
   end
@@ -21,7 +22,6 @@ class UsersController < ApplicationController
   
   def show
     @recipes = @user.recipes.order(created_at: :desc)
-    @user_followers = "フォロワー" + @user.follower_relationships.count.to_s + "人"
   end
   
   def edit

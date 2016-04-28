@@ -8,10 +8,15 @@ class User < ActiveRecord::Base
     has_secure_password
     
     has_many :recipes
+    
     has_many :following_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
     has_many :following_users, through: :following_relationships, source: :followed
+    
     has_many :follower_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
     has_many :follower_users, through: :follower_relationships, source: :follower
+    
+    has_many :likes
+    has_many :like_recipes, through: :likes, source: :recipe
     
     mount_uploader :image, ImageUploader
     
@@ -34,4 +39,17 @@ class User < ActiveRecord::Base
     def feed_items
         Recipe.where(user_id: following_user_ids + [self.id])
     end
+
+    def like?(recipe)
+        like_recipes.include?(recipe)
+    end
+    
+    def like!(recipe)
+        likes.find_or_create_by(recipe_id: recipe.id)
+    end
+    
+    def unlike!(recipe)
+        likes.find_by(recipe_id: recipe.id).destroy
+    end
+
 end

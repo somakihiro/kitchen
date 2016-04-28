@@ -2,8 +2,19 @@
     <%= link_to "レシピ編集", edit_recipe_path, class: "btn btn-large btn-primary" %>
     <%= link_to "レシピ削除", recipe_path, class: "btn btn-large btn-primary", method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
 <% end %>
+<div class="recipe-option">
 <div class="chef-name">
-    <p>シェフ：<%= link_to @recipe.user.name, @recipe.user, class: "chef-name-link" %></p>
+    シェフ：<%= link_to @recipe.user.name, @recipe.user, class: "chef-name-link" %>
+</div>
+    <% if logged_in? %>
+        <div class="like-btn">
+            <% if current_user.like?(@recipe) %>
+                <%= link_to "お気に入り解除", like_path(@recipe), method: :delete, class: "btn btn btn-primary" %>
+            <% else %>
+                <%= link_to "お気に入りにする", likes_path(recipe_id: @recipe.id), method: :post, class: "btn btn-warning" %>
+            <% end %>
+        </div>
+    <% end %>
 </div>
 <div class="recipe-top row">
     <%= image_tag @recipe.image.url, class: "recipe-image" %>
