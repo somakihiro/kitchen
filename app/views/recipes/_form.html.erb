@@ -1,6 +1,7 @@
 <%= form_for(@recipe) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">
+        <%= f.label "写真を載せよう！" %>
         <%= image_tag @recipe.image.thumb.url if @recipe.image? %>
         <%= f.file_field :image %>
         <%= f.hidden_field :image_cache %>
@@ -18,25 +19,26 @@
             <%= render 'recipes/recipe_material_fields', f: material %>
         <% end %>
         <div class="field">
-            <%= link_to_add_association '材料を追加', f, :recipe_materials %>
+            <%= link_to_add_association '材料を追加', f, :recipe_materials, class: "btn btn-primary" %>
         </div>
     </div>
-    <div class="field">
+    <div class="field new-recipe-step-frame">
         <%= f.label :step %>
         <%= f.fields_for :recipe_steps do |step| %>
             <%= render 'recipes/recipe_step_fields', f: step %>
         <% end %>
         <div class="field">
-            <%= link_to_add_association 'レシピ追加', f, :recipe_steps %>
+            <%= link_to_add_association 'レシピ追加', f, :recipe_steps, class: "btn btn-primary" %>
         </div>
     </div>
-    <div class="field">
+    <div class="field new-recipe-point-frame">
+        <%= f.label :point %>
         <%= f.fields_for :recipe_points do |point| %>
             <%= render 'recipes/recipe_point_fields', f: point %>
         <% end %>
         <div class="field">
-            <%= link_to_add_association 'ポイント追加', f, :recipe_points %>
+            <%= link_to_add_association 'ポイント追加', f, :recipe_points, class: "btn btn-primary" %>
         </div>
     </div>
-    <%= f.submit "投稿する", class: "btn btn-large btn-primary" %>
+    <%= f.submit "投稿する", class: "btn btn-large btn-warning new-recipe-btn" %>
 <% end %>

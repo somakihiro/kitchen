@@ -11,6 +11,7 @@
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li role="presentation"><%= link_to "マイページ", current_user %></li>
+                        <li role="presentation"><%= link_to "レシピ作成", new_recipe_path %></li>
                         <li role="presentation"><%= link_to "プロフィール編集", edit_user_path(current_user) %></li>
                         <li role="presentation"><%= link_to "タイムライン", timeline_user_path(current_user) %></li>
                         <li role="presentation"><%= link_to "ログアウト", logout_path, method: "delete" %></li>
@@ -18,7 +19,10 @@
                 </li>
             </ul>
         <% else %>
-            <div class="login-link">
+            <div class="header-signup-link">
+                <%= link_to "アカウント作成", signup_path %>
+            </div>
+            <div class="header-login-link">
                 <%= link_to "ログイン", login_path %>
             </div>
         <% end %>
