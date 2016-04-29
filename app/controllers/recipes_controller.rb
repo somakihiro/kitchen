@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-    before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+    before_action :set_recipe, only: [:show, :edit, :update, :destroy, :like]
     before_action :logged_in_user, only: [:new, :create, :edit, :update]
     def index
         @recipe = Recipe.all.order(created_at: :desc)
@@ -41,6 +41,10 @@ class RecipesController < ApplicationController
     def destroy
         @recipe.destroy
         redirect_to root_path
+    end
+    
+    def like
+        @like_users = @recipe.liking_users
     end
     
     def recipe_params

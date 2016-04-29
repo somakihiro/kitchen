@@ -6,15 +6,18 @@
 <div class="chef-name">
     シェフ：<%= link_to @recipe.user.name, @recipe.user, class: "chef-name-link" %>
 </div>
-    <% if logged_in? %>
-        <div class="like-btn">
+    <div class="like-btn">
+        <% if logged_in? %>
             <% if current_user.like?(@recipe) %>
                 <%= link_to "お気に入り解除", like_path(@recipe), method: :delete, class: "btn btn btn-primary" %>
             <% else %>
                 <%= link_to "お気に入りにする", likes_path(recipe_id: @recipe.id), method: :post, class: "btn btn-warning" %>
             <% end %>
+        <% end %>
+        <div class="like-recipe-count">
+            <%= link_to "お気に入り" + @recipe.likes.count.to_s + "件", like_recipe_path %>
         </div>
-    <% end %>
+    </div>
 </div>
 <div class="recipe-top row">
     <%= image_tag @recipe.image.url, class: "recipe-image" %>

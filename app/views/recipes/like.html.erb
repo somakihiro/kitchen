@@ -1,0 +1,19 @@
+<h3>「<%= @recipe.title %>」にいいね！しているユーザー</h3>
+<div class="row like-users-list">
+    <% if @like_users.any? %>
+        <% @like_users.each do |user| %>
+            <div class="col-md-3 like-users-frame">
+                <div class="like-users-thumb">
+                    <% if user.image? %>
+                        <%= link_to image_tag(user.image.url, { class: "like-users-image" }), user %>
+                    <% else %>
+                        <%= link_to image_tag("default_image.jpg", { class: "like-users-image" }), user %>
+                    <% end %>
+                </div>
+                <div class="like-users-name">
+                    <%= link_to user.name, user %>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+</div>

@@ -1,9 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html {
+    min-height: 100%;
+    position: relative;
+}
+
 body {
     background-color: #fafafa;
     color: #3a424e;
+    margin-bottom: 150px;
 }
 
 header {
@@ -21,6 +27,9 @@ header {
     height: 150px;
     border-top: 1px solid #EDEEEE;
     background-color: #fff;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
 }
 
 .footer-frame {
@@ -147,6 +156,11 @@ a:hover {
 
 .like-btn {
     text-align: right;
+}
+
+.like-recipe-count {
+    font-size: 16px;
+    padding-top: 8px;
 }
 
 .recipe-image {
@@ -350,27 +364,27 @@ a:hover {
     text-decoration: underline;
 }
 
-.follower-list, .following-list {
+.follower-list, .following-list, .like-users-list {
     font-size: 16px;
     padding-top: 50px;
 }
 
-.follower-frame, .following-frame {
+.follower-frame, .following-frame, .like-users-frame {
     padding-bottom: 30px;
 }
 
-.follower-thumb, .following-thumb {
+.follower-thumb, .following-thumb, .like-users-thumb {
     text-align: center;
     padding-bottom: 15px;
 }
 
-.follower-image, .following-image {
+.follower-image, .following-image, .like-users-image {
     border-radius: 50%;
     width: 150px;
     height: 150px;
 }
 
-.follower-name, .following-name {
+.follower-name, .following-name, .like-users-name {
     text-align: center;
 }
 
