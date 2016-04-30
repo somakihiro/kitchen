@@ -61,14 +61,19 @@ a:hover {
 
 .header-title {
     font-size: 1.75em;
-    padding: 20px 70px;
+    padding: 20px 120px;
     font-weight: bold;
     float: left;
 }
 
 .header-right {
     float: right;
-    width: 250px;
+    width: 300px;
+}
+
+.header-user-name {
+    padding-top: 18px;
+    margin-left: 20px;
 }
 
 .header-signup-link {
